@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 
 const dataSchema = new mongoose.Schema({
-  name: {
+  cName: {
     required: true,
     type: String,
   },
-  brand: {
+  durationInYears: {
     required: true,
-    type: String,
+    type: Number,
   },
-  quantity: {
+  studentCount: {
     required: true,
-    type: String,
+    type: Number,
   },
 });
 
-module.exports = mongoose.model("Product", dataSchema);
+module.exports = mongoose.model("course", dataSchema);

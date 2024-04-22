@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require("cors");
 const express = require("express");
 const mongoString = process.env.DATABASE_URL;
 const mongoose = require("mongoose");
@@ -9,6 +10,7 @@ mongoose
     .catch((error) => console.error("MongoDb connection erorr", error));
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 const routes = require("./routes/routes");
 app.use("/api", routes);
